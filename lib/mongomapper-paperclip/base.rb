@@ -13,25 +13,19 @@ end
 
 module MongoMapper
   module Paperclip
-    def self.included(base)
-      base.extend(ClassMethods)
-    end
+    def self.has_mm_attached_file(field, options = {})
 
-    module ClassMethods
-      def self.has_mm_attached_file(field, options = {})
-
-        unless self.ancestors.include?(::Paperclip)
-          include ::Paperclip
-          include ::Paperclip::Glue
-        end
-
-        has_attached_file(field, options)
-
-        key :"#{field}_file_name",    String
-        key :"#{field}_content_type", String
-        key :"#{field}_file_size",    Integer
-        key :"#{field}_updated_at",   Time
+      unless self.ancestors.include?(::Paperclip)
+        include ::Paperclip
+        include ::Paperclip::Glue
       end
+
+      has_attached_file(field, options)
+
+      key :"#{field}_file_name",    String
+      key :"#{field}_content_type", String
+      key :"#{field}_file_size",    Integer
+      key :"#{field}_updated_at",   Time
     end
   end
 end
