@@ -1,6 +1,6 @@
 # Mongomapper::Paperclip
 
-TODO: Write a gem description
+This gem gets Paperclip playing nicely with MongoMapper.
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In any model you want to use paperclip simply:
+```
+include MMPaperclip
+```
+Then use paperclip as usual. 
 
 ## Contributing
 
