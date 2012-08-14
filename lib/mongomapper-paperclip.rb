@@ -1,7 +1,7 @@
 require "mongomapper-paperclip/version"
+require 'mongomapper-paperclip/base'
 
 module Mongomapper
   module Paperclip
-    # Your code goes here...
   end
 end
