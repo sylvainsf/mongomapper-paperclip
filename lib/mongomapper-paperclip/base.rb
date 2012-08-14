@@ -11,8 +11,12 @@ Paperclip.interpolates :id_partition do |attachment, style|
   attachment.instance.id.to_s.scan(/.{4}/).join("/")
 end
 
-module MongoMapper
-  module Paperclip
+module MMPaperclip
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+  module ClassMethods
     def self.has_mm_attached_file(field, options = {})
 
       unless self.ancestors.include?(::Paperclip)
