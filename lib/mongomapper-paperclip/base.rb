@@ -12,7 +12,7 @@ Paperclip.interpolates :id_partition do |attachment, style|
 end
 
 module MongoMapper
-  class Paperclip
+  module Paperclip
     def self.has_mm_attached_file(field, options = {})
 
       unless self.ancestors.include?(::Paperclip)
