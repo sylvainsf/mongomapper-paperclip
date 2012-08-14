@@ -17,7 +17,7 @@ module MMPaperclip
   end
 
   module ClassMethods
-    def self.has_mm_attached_file(field, options = {})
+    def has_mm_attached_file(field, options = {})
 
       unless self.ancestors.include?(::Paperclip)
         include ::Paperclip
