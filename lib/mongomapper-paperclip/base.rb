@@ -37,6 +37,8 @@ end
 module MongoMapper
   module Plugins
     module EmbeddedCallbacks
+      extend ActiveSupport::Concern
+
       def run_callbacks(callback, opts = nil, &block)
         embedded_docs = []
 
